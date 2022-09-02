@@ -1,0 +1,345 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+:root {
+  --Linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+  --Red: hsl(0, 100%, 66%);
+  --White: hsl(0, 0%, 100%);
+  --Light-grayish-violet: hsl(270, 3%, 87%);
+  --Dark-grayish-violet: hsl(279, 6%, 55%);
+  --Very-dark-violet: hsl(278, 68%, 11%);
+  --font-family: "Space Grotesk", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1440px;
+  display: flex;
+  /* border: 2px solid blue; */
+  overflow: hidden;
+  height: 100vh;
+  font-family: var(--font-family);
+  font-weight: bold;
+}
+input::placeholder {
+  font-family: var(--font-family);
+  /* font-weight: bold; */
+  font-size: 21px;
+}
+
+/* purple card */
+#purple-background {
+  position: relative;
+  /* height: 100%; */
+}
+
+#mobile {
+  display: none;
+}
+.card-front {
+  position: absolute;
+  top: 16%;
+  left: 35%;
+}
+
+.cNum {
+  position: absolute;
+  top: 36%;
+  /* border: 2px solid red; */
+  color: white;
+  font-size: 24px;
+  left: 42%;
+  word-spacing: 10px;
+  letter-spacing: 3px;
+  width: 380px;
+}
+
+.cName {
+  position: absolute;
+  /* border: 2px solid green; */
+  color: white;
+  top: 43%;
+  left: 42%;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.exp {
+  /* margin-left: 65%; */
+  /* border: 2px solid red; */
+  position: absolute;
+  top: 43%;
+  left: 110%;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.logo {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  /* border: 2px solid red;*/
+}
+
+.card-back {
+  position: absolute;
+  top: 53%;
+  left: 53%;
+}
+
+.cvcNum {
+  position: absolute;
+  top: 68%;
+  left: 126%;
+  color: white;
+  /* border: 2px solid red; */
+  letter-spacing: 2px;
+}
+
+#white-background {
+  /* border: 2px solid violet; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 1.5px;
+  font-size: 14px;
+}
+
+.second_card {
+  width: 400px;
+}
+
+form {
+  /* border: 2px solid brown; */
+  width: 400px;
+  text-transform: uppercase;
+}
+
+input {
+  outline: none;
+  width: 100%;
+  padding: 0.7rem;
+  border: 2px solid var(--Light-grayish-violet);
+  border-radius: 0.5rem;
+  font-size: 18px;
+  /* margin-top: 0.5rem; */
+}
+
+input:focus {
+  border-image-source: linear-gradient(
+    to right,
+    hsl(249, 99%, 64%),
+    hsl(278, 94%, 30%)
+  );
+  border-image-slice: 1;
+}
+
+#month,
+#year {
+  width: 20%;
+  padding: 0.5rem;
+}
+
+#year {
+  margin-left: 5px;
+}
+
+#cvc {
+  width: 200px;
+  padding: 0.5rem;
+  margin-left: 20px;
+}
+
+/* headings */
+.cardNumber,
+.expiry,
+.cardName {
+  padding-top: 1.2rem;
+  padding-bottom: 0.5rem;
+}
+
+.error {
+  font-size: 12px;
+  padding-top: 0.5rem;
+  text-transform: initial;
+}
+.expiry {
+  word-spacing: 2px;
+}
+.expiry span {
+  margin-left: 30px;
+}
+
+.cvcError {
+  margin-left: 85px;
+}
+
+.cvcError,
+.expError,
+.numberError {
+  display: none;
+  color: red;
+}
+
+input[type="submit"] {
+  background-color: var(--Very-dark-violet);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 1.2rem;
+}
+input[type="submit"].continue {
+  display: none;
+}
+.complete {
+  /* border: 2px solid red; */
+  text-align: center;
+  padding: 0.5rem;
+  display: none;
+}
+.complete img {
+  padding-bottom: 0.4rem;
+}
+
+.thanks {
+  font-size: 21px;
+  padding: 0.4rem 0;
+}
+.complete .text {
+  color: var(--Dark-grayish-violet);
+  padding-bottom: 1rem;
+}
+
+/* blocked elements */
+
+/* mobile */
+@media screen and (max-width: 1440px) {
+  .container {
+    width: 400px;
+    margin: 0 auto;
+    flex-direction: column;
+    /* border: 2px solid black; */
+    height: 95vh;
+  }
+
+  #pc {
+    display: none;
+  }
+
+  #mobile {
+    display: block;
+    width: 100%;
+  }
+  .card-front img,
+  .card-back img {
+    width: 300px;
+  }
+
+  .card-back {
+    top: 16%;
+    left: 20%;
+  }
+
+  .card-front {
+    top: 53%;
+    left: 5%;
+  }
+  input {
+    padding: 1rem;
+  }
+  .second_card {
+    width: 350px;
+  }
+  form {
+    width: 350px;
+    /* border: 2px solid red; */
+  }
+
+  #cvc {
+    width: 172px;
+    /* padding: 0.9rem; */
+  }
+
+  #month,
+  #year,
+  #cvc {
+    padding: 0.8rem;
+  }
+
+  .expiry span {
+    margin-left: 10px;
+  }
+  .cvcError {
+    margin-left: 65px;
+  }
+
+  .second_card {
+    /* border: 2px olivedrab solid; */
+    margin-top: 20%;
+    border-color: in;
+  }
+
+  .logo {
+    top: 60%;
+    left: 10%;
+  }
+  img {
+    width: 60px;
+  }
+  .cNum {
+    font-size: 18px;
+    top: 88%;
+    left: 10%;
+    word-spacing: 5px;
+  }
+  .cvcNum {
+    /* color: violet; */
+    left: 80%;
+    top: 45%;
+    font-size: 12px;
+  }
+  .cName {
+    top: 102%;
+    left: 10%;
+    width: 200px;
+    /* border: 2px solid; */
+    font-size: 12px;
+  }
+  .exp {
+    top: 102%;
+    left: 65%;
+    font-size: 12px;
+  }
+
+  .complete {
+    /* border: 2px solid red; */
+    margin-top: 25px;
+    padding: 1rem;
+  }
+  .complete img {
+    width: 100px;
+    padding-bottom: 2.2rem;
+  }
+  .thanks {
+    font-size: 30px;
+    letter-spacing: 5px;
+    padding-bottom: 1.2rem;
+  }
+  .complete .text {
+    font-size: 18px;
+    /* padding-bottom: 2.2rem; */
+  }
+
+  input[type="submit"].continue {
+    display: block;
+    margin-top: 10%;
+  }
+
+  input[type="submit"].submit {
+    display: none;
+  }
+}
